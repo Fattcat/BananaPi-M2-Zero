@@ -53,10 +53,10 @@ while True:
     ssh_count = get_ssh_connection_count()
 
     with canvas(device) as draw:
-        draw.text((0, 0),   f"RAM: {ram_free_mb}/{ram_total_mb}MB", font=font, fill=255)
-        draw.text((0, 10),  f"CPU: {cpu:.0f} %", font=font, fill=255)
-        draw.text((0, 20),  f"IP: {ip}", font=font, fill=255)
-        draw.text((0, 30),  f"SSH: {ssh_count} prihl.", font=font, fill=255)
-        draw.text((0, 40),  f"Tep: {temp:.1f} °C", font=font, fill=255)
+        draw.text((0, 0),   f"RAM (volne): {ram_free_mb}/{ram_total_mb}MB", font=font, fill=255)
+        draw.text((0, 16),  f"CPU: {cpu:.0f} %", font=font, fill=255)
+        draw.text((0, 26),  f"IP: {ip}", font=font, fill=255)
+        draw.text((0, 36),  f"SSH: {ssh_count} prihl.", font=font, fill=255)
+        draw.text((0, 46),  f"Tep: {temp:.1f} °C", font=font, fill=255)
 
     time.sleep(1)
