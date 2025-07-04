@@ -54,6 +54,6 @@ Run the following commands:
 - ls /dev/i2c*
 - i2cdetect -y 1
 
-# Install Python libraries
-- sudo pip3 install luma.oled (for V2)
+# Install Python libraries( normal and V2)
+- sudo pip3 install luma.oled psutil
 - pip3 install psutil Adafruit_SSD1306 Pillow
