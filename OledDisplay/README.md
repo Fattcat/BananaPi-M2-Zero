@@ -55,4 +55,5 @@ Run the following commands:
 - i2cdetect -y 1
 
 # Install Python libraries
+- sudo pip3 install luma.oled (for V2)
 - pip3 install psutil Adafruit_SSD1306 Pillow
