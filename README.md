@@ -4,6 +4,10 @@
 - Files, README.md tutorials (for how to do something)
 - Reccommendation and setup
 ## Install
+### for PIR use this
+- install modules with pip3 cv2 gpiod
+- sudo python3 PIR-MotionCameraShot.py
+
 ```
 sudo apt update
 sudo apt install python3-pip
