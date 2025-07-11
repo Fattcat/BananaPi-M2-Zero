@@ -8,7 +8,9 @@ import threading
 
 # ---------- Konfigurácia PIR senzora ----------
 CHIP = gpiod.Chip('gpiochip0')
+# PIR pin connected to GPIO17 on Banana Pi M2 Zero
 LINE = CHIP.get_line(1)
+
 LINE.request(consumer="pir_motion", type=gpiod.LINE_REQ_DIR_IN)
 
 # ---------- Inicializácia kamery ----------
