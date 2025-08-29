@@ -4,7 +4,7 @@
 - Files, README.md tutorials (for how to do something)
 - Reccommendation and setup
 
-### in folder ```Microphone``` u can find streaming sound and listening on website with IP of device & port 4999
+- in folder ```Microphone``` u can find streaming sound and listening on website with IP of device & port 4999
 ## Install
 
 ### for PIR use this
