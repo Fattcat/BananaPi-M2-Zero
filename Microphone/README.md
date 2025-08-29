@@ -1,0 +1,2 @@
+- Works as expected
+- Recording microphone and sending 5 second "delayed" captiured sound/voice to IP with port 4999
