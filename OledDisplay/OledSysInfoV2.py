@@ -1,8 +1,7 @@
-# install arp-scan
-# then use: sudo chmod +s /usr/bin/arp-scan
-# sudo pip3 install luma.oled psutil
-
-
+# OledSysInfoV2.py
+# Zobrazuje systémové informácie na OLED displeji
+# Požiadavky: luma.oled, luma.core, psutil, smbus2, PIL, arp-scan
+# sudo pip3 install luma.oled luma.core psutil smbus2 pillow
 
 from luma.core.interface.serial import i2c
 from luma.oled.device import ssd1306
@@ -16,14 +15,18 @@ import smbus2
 import os
 
 # ======= Font =======
-# Zmeň cestu podľa reálneho umiestnenia súboru TTF                          FONT_PATH = "fonts/DejaVuSans-Bold.ttf"                                     FONT_SIZE = 10
-font = ImageFont.truetype(FONT_PATH, FONT_SIZE)                             
+# Zmeň cestu podľa reálneho umiestnenia súboru TTF
+FONT_PATH = "fonts/DejaVuSans-Bold.ttf"
+FONT_SIZE = 10
+font = ImageFont.truetype(FONT_PATH, FONT_SIZE)
+
 # ======= Automatické nájdenie OLED =======
 def find_ssd1306_address(bus=0):
     possible_addresses = [0x3C, 0x3D]
     for address in possible_addresses:
         try:
-            bus_obj = smbus2.SMBus(bus)                                                 bus_obj.write_quick(address)
+            bus_obj = smbus2.SMBus(bus)
+            bus_obj.write_quick(address)
             bus_obj.close()
             return address
         except OSError:
@@ -111,12 +114,14 @@ last_wifi_check = time.time()
 while True:
     now = time.time()
 
+    # Aktualizácia počtu WiFi klientov každých 30 sekúnd
     if now - last_wifi_check >= 30:
         new_count = get_wifi_clients()
         if new_count != -1:
             wifi_client_count = new_count
         last_wifi_check = now
 
+    # Získanie systémových dát
     ram = psutil.virtual_memory()
     ram_free_mb = int(ram.available / (1024 * 1024))
     ram_total_mb = int(ram.total / (1024 * 1024))
@@ -127,6 +132,7 @@ while True:
     apache_ok = is_apache_running()
     tor_ok = is_tor_running()
 
+    # Zobrazenie na OLED
     with canvas(device) as draw:
         draw.text((0, 0),   f"RAM: {ram_free_mb}/{ram_total_mb} MB", font=font, fill=255)
         draw.text((0, 16),  f"CPU: {cpu:.0f} %", font=font, fill=255)
