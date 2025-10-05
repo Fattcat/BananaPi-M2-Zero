@@ -57,3 +57,4 @@ Run the following commands:
 # Install Python libraries( normal and V2)
 - sudo pip3 install luma.oled psutil
 - pip3 install psutil Adafruit_SSD1306 Pillow
+- sudo pip3 install luma.core smbus2 pillow
