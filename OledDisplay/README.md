@@ -36,7 +36,7 @@ Run the following commands:
 ```bash
 ## Update system packages
 sudo apt update && sudo apt upgrade -y
-
+```
 - we now add support for oled i2c display
 
 ```
