@@ -37,6 +37,13 @@ Run the following commands:
 ## Update system packages
 - sudo apt update && sudo apt upgrade -y
 
+- we now add support for oled i2c display
+
+```
+echo "overlays=i2c0" | sudo tee -a /boot/armbianEnv.txt
+```
+- now reboot with ```sudo reboot```
+
 ## Install necessary system packages
 - sudo apt install -y python3 python3-pip i2c-tools git python3-pil python3-dev
 
