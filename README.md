@@ -12,8 +12,17 @@
 - sudo python3 PIR-MotionCameraShot.py
 
 ```
+
 sudo apt update
 sudo apt install python3-pip
 pip3 install psutil luma.oled
 sudo pip3 install luma.oled psutil luma.core smbus2 pillow
 ```
+
+# for Oled display
+- we now add support for oled i2c display
+
+```
+echo "overlays=i2c0" | sudo tee -a /boot/armbianEnv.txt
+```
+- now reboot with ```sudo reboot```
