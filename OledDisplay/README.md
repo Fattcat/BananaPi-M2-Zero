@@ -62,6 +62,19 @@ echo "overlays=i2c0" | sudo tee -a /boot/armbianEnv.txt
 - i2cdetect -y 1
 
 # Install Python libraries( normal and V2)
-- sudo pip3 install luma.oled psutil
-- pip3 install psutil Adafruit_SSD1306 Pillow
-- sudo pip3 install luma.core smbus2 pillow
+
+```
+sudo pip3 install luma.oled psutil
+```
+
+```
+pip3 install psutil Adafruit_SSD1306 Pillow
+```
+
+```
+sudo pip3 install luma.core smbus2 pillow
+```
+
+```
+sudo apt install arp-scan
+```
