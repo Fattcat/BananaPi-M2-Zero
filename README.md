@@ -15,7 +15,7 @@
 
 sudo apt update
 sudo apt install python3-pip
-pip3 install psutil luma.oled
+pip3 install arp-scan psutil luma.oled
 sudo pip3 install luma.oled psutil luma.core smbus2 pillow
 ```
 
