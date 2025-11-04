@@ -19,6 +19,11 @@ pip3 install arp-scan psutil luma.oled
 sudo pip3 install luma.oled psutil luma.core smbus2 pillow
 ```
 
+```
+pip3 install opencv-python
+sudo apt install python3-opencv -y
+```
+
 # for Oled display
 - we now add support for oled i2c display
 
