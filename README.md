@@ -12,7 +12,6 @@
 - sudo python3 PIR-MotionCameraShot.py
 
 ```
-
 sudo apt update
 sudo apt install python3-pip
 pip3 install numpy arp-scan psutil luma.oled
@@ -24,7 +23,22 @@ pip3 install opencv-python
 sudo apt install python3-opencv -y
 sudo apt install v4l-utils -y
 v4l2-ctl --list-devices
+sudo apt install  mplayer -y
 ```
+
+```
+sudo nano /boot/armbianEnv.txt
+```
+
+- and paste on bottom this
+
+```
+extraargs=usbcore.autosuspend=-1 dwc_otg.lpm_enable=0
+```
+- then press CTRL o, then enter, and CTRL x.
+
+- now ```sudo reboot```
+
 
 # for Oled display
 - we now add support for oled i2c display
